@@ -48,56 +48,53 @@ void glColorfv(Vector3 c) {
 
 }
 
+void initTable(float topWidth, float topThick, float legLen, float legThick) {
+
+	pTransInfo[3].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[3].vScale = Vector3(topWidth, topThick, topWidth); // no scale
+	pTransInfo[3].vTranslate = Vector3(0.5f, 0.5f, 0.5f);// small cube at (0,1,1)
+
+	pTransInfo[4].vColor = Vector3(1.0f, 0.0f, 1.0f); 
+	pTransInfo[4].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[4].vScale = Vector3(legThick, legLen, legThick); 
+	pTransInfo[4].vTranslate = Vector3(0.85f, 0.0f, 0.85f);
+
+	pTransInfo[5].vColor = Vector3(0.0f, 1.0f, 0.0f);
+	pTransInfo[5].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[5].vScale = Vector3(legThick, legLen, legThick);
+	pTransInfo[5].vTranslate = Vector3(0.15f, 0.0f, 0.85f);
+
+	pTransInfo[6].vColor = Vector3(1.0f, 1.0f, 0.0f); 
+	pTransInfo[6].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[6].vScale = Vector3(legThick, legLen, legThick);
+	pTransInfo[6].vTranslate = Vector3(0.15f, 0.0f, 0.15f);
+
+	pTransInfo[7].vColor = Vector3(1.0f, 0.0f, 0.0f); 
+	pTransInfo[7].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[7].vScale = Vector3(legThick, legLen, legThick);
+	pTransInfo[7].vTranslate = Vector3(.85f,0.0f, 0.15f);
+}
 void init() {
 
 	// first entry governs whole scene
-	pTransInfo[0].vColor = Vector3(1.0f, 0.0f, 0.0f); // red
+	//pTransInfo[0].vColor = Vector3(1.0f, 0.0f, 0.0f); // red
 	pTransInfo[0].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
 	pTransInfo[0].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
 	pTransInfo[0].vTranslate = Vector3(0.5f, 0.5f, 0.5f); // center of scene
 
 														  // sphere
-	pTransInfo[1].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
+	//pTransInfo[1].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
 	pTransInfo[1].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
 	pTransInfo[1].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[1].vTranslate = Vector3(0.5f, 0.5f, -0.5f);// sphere at (1,1,0)
-
-														  // cone
-	pTransInfo[2].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[2].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
-	pTransInfo[2].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[2].vTranslate = Vector3(0.5f, -0.5f, 0.5f);//  cone at (1,0,1)
+	pTransInfo[1].vTranslate = Vector3(-0.5f, 0.5f, 0.5f);// sphere at (1,1,0)
 
 														  // teapot
-	pTransInfo[3].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[3].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
-	pTransInfo[3].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[3].vTranslate = Vector3(0.5f, 0.5f, 0.5f); // teapot at (1,1,1)
-
-														  // torus
-	pTransInfo[4].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[4].vRotate = Vector3(90.0f, 0.0f, 0.0f);// rotate about x
-	pTransInfo[4].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[4].vTranslate = Vector3(-0.5f, 0.5f, -0.5f);// torus at (0,1,0)
-
-														   // dodecahedron
-	pTransInfo[5].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[5].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
-	pTransInfo[5].vScale = Vector3(0.15f, 0.15f, 0.15f);// make small
-	pTransInfo[5].vTranslate = Vector3(0.5f, -0.5f, -0.5f);// dodecahedron at (1,0,0)
-
-														   // small cube
-	pTransInfo[6].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[6].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
-	pTransInfo[6].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[6].vTranslate = Vector3(-0.5f, 0.5f, 0.5f);// small cube at (0,1,1)
-
-														  // cylinder
-	pTransInfo[7].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
-	pTransInfo[7].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
-	pTransInfo[7].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
-	pTransInfo[7].vTranslate = Vector3(-0.5f, -0.5f, 0.5f);// cylinder at (0,0,1)
-
+	//pTransInfo[2].vColor = Vector3(0.0f, 0.0f, 0.0f); // black
+	pTransInfo[2].vRotate = Vector3(0.0f, 0.0f, 0.0f);	// no rotation
+	pTransInfo[2].vScale = Vector3(1.0f, 1.0f, 1.0f); // no scale
+	pTransInfo[2].vTranslate = Vector3(0.5f, 0.5f, 0.5f); // teapot at (1,1,1)
+	
+	initTable(1.0f, .15f, 1.0f, .05f);
 														   // initialize quadric handle
 	qobj = gluNewQuadric();
 	gluQuadricDrawStyle(qobj, GLU_LINE);
@@ -115,6 +112,8 @@ void init() {
 
 }
 
+
+
 void doTransform(TransformInfo & t) {
 
 	glTranslatefv(t.vTranslate);
@@ -124,6 +123,44 @@ void doTransform(TransformInfo & t) {
 	// finally set color
 	glColorfv(t.vColor);
 
+}
+
+void RotateTable() {
+
+}
+void ScaleTable() {
+
+}
+void TranslateTable() {
+
+}
+void doTransformTable() {
+	glPushMatrix();
+	doTransform(pTransInfo[3]);
+	glutSolidCube(1);
+	
+	glPushMatrix();
+	doTransform(pTransInfo[4]);
+	glutSolidCube(1);
+	glPopMatrix();
+
+	glPushMatrix();
+	doTransform(pTransInfo[5]);
+	glutSolidCube(1);
+	glPopMatrix();
+
+	
+	glPushMatrix();
+	doTransform(pTransInfo[6]);
+	glutSolidCube(1);
+	glPopMatrix();
+	
+	glPushMatrix();
+	doTransform(pTransInfo[7]);
+	glutSolidCube(1);
+	glPopMatrix();
+
+	glPopMatrix();
 }
 
 void transform_render() {
@@ -140,44 +177,24 @@ void transform_render() {
 
 	//transform entire scene
 	doTransform(pTransInfo[0]);
-
-	glutWireCube(1.0);
+	
+	doTransformTable();
+	glPushMatrix();
+	doTransform(pTransInfo[3]);
+	glutSolidCube(1);
+	glPopMatrix();
 
 	glPushMatrix();
 	doTransform(pTransInfo[1]);
-	glutWireSphere(0.25, 10, 8);
+	glutSolidSphere(0.25, 10, 8);
 	glPopMatrix();
 
 	glPushMatrix();
 	doTransform(pTransInfo[2]);
-	glutWireCone(0.2, 0.5, 10, 8);
+	glutSolidTeapot(0.2);
 	glPopMatrix();
 
-	glPushMatrix();
-	doTransform(pTransInfo[3]);
-	glutWireTeapot(0.2);
-	glPopMatrix();
-
-	glPushMatrix();
-	doTransform(pTransInfo[4]);
-	glutWireTorus(0.1, 0.3, 10, 10);
-	glPopMatrix();
-
-	glPushMatrix();
-	doTransform(pTransInfo[5]);
-	glutWireDodecahedron();
-	glPopMatrix();
-
-	glPushMatrix();
-	doTransform(pTransInfo[6]);
-	glutWireCube(0.25);
-	glPopMatrix();
-
-	glPushMatrix();
-	doTransform(pTransInfo[7]);
-	gluCylinder(qobj, 0.2, 0.2, 0.4, 8, 8);
-	glPopMatrix();
-
+	
 	glPopMatrix();
 
 	// refresh image
